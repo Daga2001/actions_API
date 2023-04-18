@@ -6,10 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    # Se hace este checkout para que podamos encontrar los archivos a ejecutar
+    # En las pruebas
+    - uses: actions/checkout@v3
+
     - name: Check tests status
       run: python app/test_utils.py
 
-    - uses: actions/checkout@v3
     - name: Build the FastAPI Docker image
       run: docker build -t '${{secrets.DOCKER_LOGIN}}'/fastapi-docker-workflow:'${{github.sha}}' .
       
