@@ -22,6 +22,7 @@ jobs:
     - name: Push the docker image
       run: docker push '${{secrets.DOCKER_LOGIN}}'/fastapi-docker-workflow:'${{github.sha}}'
   nothing:
+    runs-on: ubuntu-latest
     steps:
     - name: just do nothing bro!
       run: echo "i'm doing nothing!"
