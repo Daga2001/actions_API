@@ -41,13 +41,17 @@ jobs:
         # Server port, default 25:
         server_port: 587
         # Required mail subject:
-        subject: Github Actions job result
+        subject: Github Actions result - success
         # Required recipients' addresses:
-        to: david.alberto.guzman@correounivalle.edu.co
+        to: 
+        david.alberto.guzman@correounivalle.edu.co, 
+        mauricio.carrillo@correounivalle.edu.co,
+        alejandro.montero@correounivalle.edu.co,
+        juan.ordonez.hurtado@correounivalle.edu.co
         # Required sender full name (address can be skipped):
         from: Luke Skylwalker # <user@example.com>
         # Optional plain body:
-        body: Build job of ${{github.repository}} completed successfully!
+        body: Congratulations!, your repository is now at our production site!.
         # Optional carbon copy recipients:
         # cc: kyloren@example.com,leia@example.com
         # Optional recipient of the email response:
