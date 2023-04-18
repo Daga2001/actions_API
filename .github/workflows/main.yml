@@ -25,4 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: just do nothing bro!
-      run: echo "i'm doing nothing!"
+      run: echo "i'm doing nothing!" > nothing_to_read.txt
