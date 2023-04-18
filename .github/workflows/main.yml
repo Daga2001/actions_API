@@ -34,6 +34,10 @@ jobs:
       with: 
         # Required mail server address if not connection_url:
         server_address: smtp.gmail.com
+        # Optional (recommended) mail server username:
+        username: ${{secrets.MAIL_USERNAME}}
+        # Optional (recommended) mail server password:
+        password: ${{secrets.MAIL_PASSWORD}}
         # Server port, default 25:
         server_port: 587
         # Required mail subject:
@@ -41,7 +45,7 @@ jobs:
         # Required recipients' addresses:
         to: david.alberto.guzman@correounivalle.edu.co
         # Required sender full name (address can be skipped):
-        from: pruebapruebas205 # <user@example.com>
+        from: Luke Skylwalker # <user@example.com>
         # Optional plain body:
         body: Build job of ${{github.repository}} completed successfully!
         # Optional carbon copy recipients:
