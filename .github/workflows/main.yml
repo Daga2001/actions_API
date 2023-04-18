@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check tests status
-      run: python ./app/test_utils.py
+      run: python app/test_utils.py
 
     - uses: actions/checkout@v3
     - name: Build the FastAPI Docker image
