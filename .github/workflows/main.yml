@@ -26,3 +26,29 @@ jobs:
     steps:
     - name: just do nothing bro!
       run: echo "i'm doing nothing!" > nothing_to_read.txt
+  send_mail:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with: 
+        # Required mail subject:
+        subject: Github Actions job result
+        # Required recipients' addresses:
+        to: david.alberto.guzman@correounivalle.edu.co
+        # Required sender full name (address can be skipped):
+        from: Luke Skywalker # <user@example.com>
+        # Optional plain body:
+        body: Build job of ${{github.repository}} completed successfully!
+        # Optional carbon copy recipients:
+        # cc: kyloren@example.com,leia@example.com
+        # Optional recipient of the email response:
+        # reply_to: luke@example.com
+        # Optional Message ID this message is replying to:
+        # in_reply_to: <random-luke@example.com>
+        # Optional converting Markdown to HTML (set content_type to text/html too):
+        convert_markdown: true
+        # Optiqonal attachments:
+        attachments: attachments.zip,git.diff,./dist/static/*.js
+        # Optional priority: 'high', 'normal' (default) or 'low'
+        priority: high

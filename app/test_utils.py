@@ -21,7 +21,7 @@ class TestUtils(unittest.TestCase):
         self.assertNotEqual(utils.cubic(-3), 27)
 
     def test_say_hello(self):
-        self.assertEqual(utils.say_hello("Geekflare"), "Hello, world")
+        self.assertEqual(utils.say_hello("Geekflare"), "Hello, Geekflare")
         self.assertEqual(utils.say_hello("Chandan"), "Hello, Chandan")
         self.assertNotEqual(utils.say_hello("Chandan"), "Hi, Chandan")
         self.assertNotEqual(utils.say_hello("Hafeez"), "Hi, Hafeez")
