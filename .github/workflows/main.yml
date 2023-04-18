@@ -6,6 +6,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Check tests status
+    - run: python ./app/test_utils.py
+        if [ $? -eq 0 ]
+        then
+            echo "All tests passed!"
+        else
+            echo "Some tests failed."
+            exit 1
+        fi
     - uses: actions/checkout@v3
     - name: Build the FastAPI Docker image
       run: docker build -t '${{secrets.DOCKER_LOGIN}}'/fastapi-docker-workflow:'${{github.sha}}' .
