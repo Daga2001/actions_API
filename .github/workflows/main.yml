@@ -43,8 +43,7 @@ jobs:
         # Required mail subject:
         subject: Github Actions result - success
         # Required recipients' addresses:
-        to: 
-        david.alberto.guzman@correounivalle.edu.co, 
+        to: david.alberto.guzman@correounivalle.edu.co, 
         mauricio.carrillo@correounivalle.edu.co,
         alejandro.montero@correounivalle.edu.co,
         juan.ordonez.hurtado@correounivalle.edu.co
