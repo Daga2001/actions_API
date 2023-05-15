@@ -1,0 +1,35 @@
+name: Django API and WEB application - docker push
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  build_push_docker:
+    runs-on: ubuntu-latest
+    steps:
+    # Se hace este checkout para que podamos encontrar los archivos a ejecutar
+    # En las pruebas
+    - uses: actions/checkout@v3
+
+    - name: Builds docker images
+      run: docker compose up --build &
+
+    - name: Stops all images
+      run: docker compose down -v &
+      
+    - name: Login to docker
+      run: docker login --username '${{secrets.DOCKER_LOGIN}}' --password '${{secrets.DOCKER_PASSWORD}}'
+
+    - name: Building docker image1  
+      run: |
+        docker build -t daga2001/front:${{github.sha}} ./SmartMarketPlace_backend
+        docker build -t daga2001/front:${{github.sha}} .
+
+    - name: Push docker images
+      run: |
+        docker push daga2001/front:${{github.sha}}
+        docker push daga2001/back:${{github.sha}}
+  
